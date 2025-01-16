@@ -7,15 +7,18 @@ const initialState: CounterState = {
     value: 0,
   }
 
-export const quizSlice = createSlice({
-    name: 'quiz',
+export const counterSlice = createSlice({
+    name: 'counter',
     initialState,
     reducers:{
         increment: (state)=>{
             state.value += 1;
         },
+        decrement: (state, action)=>{
+            state.value -= action.payload;
+        }
     }
 })
 
-export const { increment} = quizSlice.actions
-export default quizSlice.reducer
+export const { increment,decrement } = counterSlice.actions
+export default counterSlice.reducer

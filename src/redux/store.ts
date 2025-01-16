@@ -1,9 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { quizSlice } from './features/quiz/quizSlice'
+import { counterSlice } from './features/counter/counterSlice'
+import { showSlice } from './features/show/showSlice'
 
 
 export const store = configureStore({
-    reducer: quizSlice.reducer
+    reducer: {
+        counter: counterSlice.reducer,
+        show: showSlice.reducer
+    },
+
 })
 
 
